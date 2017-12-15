@@ -1,0 +1,37 @@
+Links:
+
+- https://anitagraser.com/2015/05/08/trajectory-animations-with-fadeout-effect/ 
+
+Konkret muss folgendes gemacht werde:
+
+1) Farb-Fading-Effekt:
+a) Style des Layers öffnen
+b) abgestuft > Symbol > einfache Markierung > Füllung --> rechts icon anklicken und bearbeiten klicken. 
+c) "year_dat" entspricht konkret der Variabeln in der Tabelle, die für das Datum (Format Iso8601!) verwendet wird
+
+color_hsv(  
+  311,
+  scale_exp( 
+    year(age(animation_datetime(),"year_dat")),
+    0,60,
+    100,0,
+    0.2
+  ),
+  90
+)
+
+------------
+wenn es von dunkelrot nach hellrot gehen soll, können die min und max in scale_exp angepasst werden.
+
+color_hsv(  
+  10,
+  scale_exp( 
+    year(age(animation_datetime(),"year_dat")),
+    30,60,
+    80,30,
+    0.2
+  ),
+  90
+)
+
+
